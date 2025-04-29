@@ -1,0 +1,143 @@
+
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
+  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+    <li>
+      <a 
+        href={href} 
+        className="text-gray-700 hover:text-opendata-blue font-medium transition-colors duration-300"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        {children}
+      </a>
+    </li>
+  );
+
+  const SocialIcon = ({ Icon, href }: { Icon: React.ElementType; href: string }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-opendata-gray-dark hover:text-opendata-blue transition-colors duration-300"
+    >
+      <Icon size={20} />
+    </a>
+  );
+
+  return (
+    <header
+      className={cn(
+        "fixed w-full top-0 left-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-white shadow-md py-3"
+          : "bg-transparent py-5"
+      )}
+    >
+      <div className="container-custom flex justify-between items-center">
+        <Link to="/" className="flex items-center">
+          <span className="text-opendata-blue font-bold text-2xl">
+            Opendata<span className="text-opendata-yellow">Systems</span>
+          </span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:block">
+          <ul className="flex space-x-8">
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#about">Sobre Nós</NavLink>
+            <NavLink href="#services">Serviços</NavLink>
+            <NavLink href="#pricing">Planos</NavLink>
+            <NavLink href="#testimonials">Depoimentos</NavLink>
+            <NavLink href="#contact">Contato</NavLink>
+          </ul>
+        </nav>
+
+        <div className="hidden md:flex items-center space-x-6">
+          <div className="flex space-x-4">
+            <SocialIcon Icon={Facebook} href="https://facebook.com" />
+            <SocialIcon Icon={Instagram} href="https://instagram.com" />
+            <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
+          </div>
+          <Button className="btn-primary">Fale Conosco</Button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-opendata-blue"
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden`}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex justify-between items-center p-5 border-b">
+            <span className="text-opendata-blue font-bold text-xl">
+              Opendata<span className="text-opendata-yellow">Systems</span>
+            </span>
+            <button
+              onClick={toggleMenu}
+              aria-label="Close Menu"
+              className="text-opendata-blue"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <nav className="flex-grow p-5">
+            <ul className="space-y-6">
+              <NavLink href="#home">Home</NavLink>
+              <NavLink href="#about">Sobre Nós</NavLink>
+              <NavLink href="#services">Serviços</NavLink>
+              <NavLink href="#pricing">Planos</NavLink>
+              <NavLink href="#testimonials">Depoimentos</NavLink>
+              <NavLink href="#contact">Contato</NavLink>
+            </ul>
+          </nav>
+          <div className="p-5 border-t">
+            <div className="flex justify-center space-x-6 mb-4">
+              <SocialIcon Icon={Facebook} href="https://facebook.com" />
+              <SocialIcon Icon={Instagram} href="https://instagram.com" />
+              <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
+            </div>
+            <Button className="w-full btn-primary">Fale Conosco</Button>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
