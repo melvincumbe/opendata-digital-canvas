@@ -1,12 +1,13 @@
 
 import React from "react";
 import PricingCard from "../ui/PricingCard";
+import { Flag } from "lucide-react";
 
 const Pricing: React.FC = () => {
   const pricingPlans = [
     {
       title: "Básico",
-      price: "R$49,90",
+      price: "3.000 MT",
       period: "/mês",
       description: "Ideal para pequenos negócios e profissionais liberais.",
       features: [
@@ -21,7 +22,7 @@ const Pricing: React.FC = () => {
     },
     {
       title: "Premium",
-      price: "R$89,90",
+      price: "5.500 MT",
       period: "/mês",
       description: "Para empresas em crescimento que precisam de mais recursos.",
       features: [
@@ -38,7 +39,7 @@ const Pricing: React.FC = () => {
     },
     {
       title: "Empresarial",
-      price: "R$149,90",
+      price: "9.000 MT",
       period: "/mês",
       description: "Solução completa para empresas estabelecidas.",
       features: [
@@ -65,6 +66,13 @@ const Pricing: React.FC = () => {
           Escolha o plano ideal para o seu negócio e comece a expandir sua
           presença digital hoje mesmo.
         </p>
+        
+        <div className="flex justify-center mb-8">
+          <div className="flex items-center space-x-2 bg-green-50 py-2 px-4 rounded-full border border-green-200">
+            <Flag size={18} className="text-red-600" />
+            <span className="text-sm font-medium">Preços em Metical Moçambicano (MT)</span>
+          </div>
+        </div>
 
         <div className="flex flex-col md:flex-row gap-8 mt-16 justify-center">
           {pricingPlans.map((plan, index) => (

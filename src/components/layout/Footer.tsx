@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer: React.FC = () => {
@@ -13,13 +13,17 @@ const Footer: React.FC = () => {
             <h3 className="text-2xl font-bold mb-6">
               Opendata<span className="text-opendata-yellow">Systems</span>
             </h3>
+            <div className="flex items-center mb-4">
+              <Flag size={18} className="text-red-600 mr-2" />
+              <span className="text-opendata-yellow">Moçambique</span>
+            </div>
             <p className="mb-6 text-gray-300">
               Transformando ideias em soluções digitais inovadoras para empresas
               de todos os tamanhos.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1DHHEZVmus/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20 transition-all"
@@ -27,7 +31,7 @@ const Footer: React.FC = () => {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20 transition-all"
@@ -89,16 +93,16 @@ const Footer: React.FC = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="flex-shrink-0 mt-1" size={18} />
                 <span className="text-gray-300">
-                  Av. Paulista, 1000, São Paulo - SP
+                  Maputo, Matola, Malhampsene
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} />
-                <span className="text-gray-300">(11) 9999-9999</span>
+                <span className="text-gray-300">+258 833634798 / 846903226</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} />
-                <span className="text-gray-300">contato@opendatasystems.com.br</span>
+                <span className="text-gray-300">contato@opendatasystems.com.mz</span>
               </li>
             </ul>
           </div>
@@ -124,7 +128,8 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} OpendataSystems. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} OpendataSystems. Todos os direitos reservados.<br/>
+            <span className="text-xs">Desenvolvido por OpendataSystems e Melvin Cumbe (Desenvolvedor Web)</span>
           </p>
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-6">

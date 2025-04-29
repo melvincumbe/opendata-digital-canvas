@@ -1,13 +1,13 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Flag } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
+      className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-opendata-blue overflow-hidden"
     >
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern" />
@@ -16,22 +16,27 @@ const Hero: React.FC = () => {
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-opendata-blue mb-6 leading-tight">
+            <div className="flex items-center justify-center lg:justify-start mb-4">
+              <Flag className="text-opendata-yellow mr-2" size={24} />
+              <span className="text-opendata-yellow font-semibold">Moçambique</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Soluções Digitais para o{" "}
               <span className="text-opendata-yellow">Crescimento</span> do seu Negócio
             </h1>
             
-            <p className="text-lg text-gray-600 mb-8 md:pr-8">
+            <p className="text-lg text-gray-300 mb-8 md:pr-8">
               Hospedagem de sites, domínios personalizados, e-mails profissionais e muito mais.
               Transforme sua presença digital com a OpendataSystems.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <Button className="btn-primary">
+              <Button className="bg-opendata-yellow hover:bg-opacity-90 text-opendata-blue font-semibold">
                 Quero um Orçamento
                 <ArrowRight className="ml-2" size={16} />
               </Button>
-              <Button variant="outline" className="btn-outline">
+              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-opendata-blue font-semibold transition-all duration-300">
                 Nossos Serviços
               </Button>
             </div>
@@ -49,8 +54,8 @@ const Hero: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="text-sm text-gray-600">
-                <span className="font-semibold text-opendata-blue">+500</span> clientes satisfeitos
+              <div className="text-sm text-gray-300">
+                <span className="font-semibold text-opendata-yellow">+500</span> clientes satisfeitos
               </div>
             </div>
           </div>
