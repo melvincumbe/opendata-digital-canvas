@@ -49,9 +49,9 @@ const Contact: React.FC = () => {
     {
       icon: <Phone size={24} />,
       title: "Telefone",
-      value: "(11) 9999-9999",
+      value: "+258 833634798 / 846903226",
       action: "Ligue para nós",
-      link: "tel:+551199999999",
+      link: "tel:+258833634798",
     },
     {
       icon: <Mail size={24} />,
@@ -220,6 +220,11 @@ const Contact: React.FC = () => {
 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <h4 className="font-semibold text-opendata-blue mb-4">
+                Localização
+              </h4>
+              <p className="text-gray-600 mb-1">Maputo, Matola, Malhampsene</p>
+              
+              <h4 className="font-semibold text-opendata-blue mb-4 mt-6">
                 Horário de Atendimento
               </h4>
               <p className="text-gray-600 mb-1">Segunda a Sexta: 8h às 18h</p>
