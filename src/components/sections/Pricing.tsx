@@ -6,53 +6,53 @@ import { Flag } from "lucide-react";
 const Pricing: React.FC = () => {
   const pricingPlans = [
     {
-      title: "Básico",
-      price: "3.000 MT",
+      title: "Pacote Simples",
+      price: "280 MT",
       period: "/mês",
       description: "Ideal para pequenos negócios e profissionais liberais.",
       features: [
-        "1 Site Hospedado",
+        "1 Domínio",
         "10GB de Espaço",
-        "1 Domínio Grátis",
+        "Tráfego Ilimitado",
+        "Anti-spam Profissional",
+        "Backup Diário Remoto",
+        "Segurança Imunify360",
         "5 Contas de Email",
-        "Certificado SSL Básico",
-        "Suporte por Email"
+        "Certificado SSL"
       ],
       isPopular: false
     },
     {
-      title: "Premium",
-      price: "5.500 MT",
+      title: "Pacote 2",
+      price: "560 MT",
       period: "/mês",
       description: "Para empresas em crescimento que precisam de mais recursos.",
       features: [
-        "5 Sites Hospedados",
-        "50GB de Espaço",
-        "1 Domínio Grátis",
+        "3 Domínios",
+        "25GB de Espaço",
+        "Tráfego Ilimitado",
+        "Anti-spam Profissional",
+        "Backup Diário Remoto",
+        "Segurança Imunify360",
         "20 Contas de Email",
-        "Certificado SSL Premium",
-        "Suporte Prioritário 24/7",
-        "Backup Diário",
-        "CDN Integrado"
+        "Certificado SSL"
       ],
       isPopular: true
     },
     {
-      title: "Empresarial",
-      price: "9.000 MT",
+      title: "Pacote 3",
+      price: "780 MT",
       period: "/mês",
       description: "Solução completa para empresas estabelecidas.",
       features: [
-        "Sites Ilimitados",
-        "100GB de Espaço",
-        "2 Domínios Grátis",
-        "Email Ilimitado",
-        "Certificado SSL Premium",
-        "Suporte Prioritário 24/7",
-        "Backup Diário",
-        "CDN Integrado",
-        "IP Dedicado",
-        "Ambiente Otimizado"
+        "5 Domínios",
+        "50GB de Espaço",
+        "Tráfego Ilimitado",
+        "Anti-spam Profissional",
+        "Backup Diário Remoto",
+        "Segurança Imunify360",
+        "50 Contas de Email",
+        "Certificado SSL"
       ],
       isPopular: false
     }
@@ -68,7 +68,7 @@ const Pricing: React.FC = () => {
         </p>
         
         <div className="flex justify-center mb-8">
-          <div className="flex items-center space-x-2 bg-green-50 py-2 px-4 rounded-full border border-green-200">
+          <div className="flex items-center space-x-2 bg-green-50 py-2 px-4 rounded-full border border-green-200 animate-fade-in">
             <Flag size={18} className="text-red-600" />
             <span className="text-sm font-medium">Preços em Metical Moçambicano (MT)</span>
           </div>
@@ -76,7 +76,11 @@ const Pricing: React.FC = () => {
 
         <div className="flex flex-col md:flex-row gap-8 mt-16 justify-center">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className="flex-1 max-w-sm mx-auto md:mx-0">
+            <div 
+              key={index} 
+              className="flex-1 max-w-sm mx-auto md:mx-0 animate-fade-in" 
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <PricingCard
                 title={plan.title}
                 price={plan.price}
@@ -89,7 +93,7 @@ const Pricing: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '300ms' }}>
           <p className="text-gray-600 mb-2">
             Precisando de uma solução personalizada?
           </p>

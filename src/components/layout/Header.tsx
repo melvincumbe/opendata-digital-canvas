@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Linkedin } from "lucide-react";
@@ -8,6 +7,7 @@ import { cn } from "@/lib/utils";
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,25 +19,53 @@ const Header: React.FC = () => {
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
+
+      // Detect which section is currently in view
+      const sections = ["home", "about", "services", "pricing", "testimonials", "contact"];
+      let currentSection = activeSection;
+
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+          }
+        }
+      });
+
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrolled]);
+  }, [scrolled, activeSection]);
 
-  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <li>
-      <a 
-        href={href} 
-        className="text-gray-700 hover:text-opendata-blue font-medium transition-colors duration-300"
-        onClick={() => setIsMenuOpen(false)}
-      >
-        {children}
-      </a>
-    </li>
-  );
+  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+    const isActive = activeSection === href.replace('#', '');
+    
+    return (
+      <li>
+        <a 
+          href={href} 
+          className={cn(
+            "relative text-gray-700 hover:text-opendata-blue font-medium transition-colors duration-300 py-2 px-1",
+            isActive && "text-opendata-blue"
+          )}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {children}
+          {isActive && (
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-opendata-blue animate-scale-in" />
+          )}
+        </a>
+      </li>
+    );
+  };
 
   const SocialIcon = ({ Icon, href }: { Icon: React.ElementType; href: string }) => (
     <a
@@ -80,8 +108,8 @@ const Header: React.FC = () => {
 
         <div className="hidden md:flex items-center space-x-6">
           <div className="flex space-x-4">
-            <SocialIcon Icon={Facebook} href="https://facebook.com" />
-            <SocialIcon Icon={Instagram} href="https://instagram.com" />
+            <SocialIcon Icon={Facebook} href="https://www.facebook.com/share/1DHHEZVmus/?mibextid=wwXIfr" />
+            <SocialIcon Icon={Instagram} href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" />
             <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
           </div>
           <Button className="btn-primary">Fale Conosco</Button>
@@ -128,8 +156,8 @@ const Header: React.FC = () => {
           </nav>
           <div className="p-5 border-t">
             <div className="flex justify-center space-x-6 mb-4">
-              <SocialIcon Icon={Facebook} href="https://facebook.com" />
-              <SocialIcon Icon={Instagram} href="https://instagram.com" />
+              <SocialIcon Icon={Facebook} href="https://www.facebook.com/share/1DHHEZVmus/?mibextid=wwXIfr" />
+              <SocialIcon Icon={Instagram} href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" />
               <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
             </div>
             <Button className="w-full btn-primary">Fale Conosco</Button>
