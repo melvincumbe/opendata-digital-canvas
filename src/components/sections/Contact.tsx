@@ -13,6 +13,7 @@ const Contact: React.FC = () => {
     subject: "",
     message: "",
     service: "",
+    order: "", // Added order field
   });
 
   const handleChange = (
@@ -42,6 +43,7 @@ const Contact: React.FC = () => {
       subject: "",
       message: "",
       service: "",
+      order: "",
     });
   };
 
@@ -149,6 +151,21 @@ const Contact: React.FC = () => {
                     <option value="development">Desenvolvimento Web</option>
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label htmlFor="order" className="block text-gray-700 mb-2">
+                  Detalhes da Encomenda
+                </label>
+                <input
+                  type="text"
+                  id="order"
+                  name="order"
+                  value={formData.order}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
+                  placeholder="Descreva brevemente sua encomenda"
+                />
               </div>
 
               <div>

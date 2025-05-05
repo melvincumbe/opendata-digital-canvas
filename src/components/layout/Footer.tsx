@@ -4,6 +4,13 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Flag } from "lucide
 import { Button } from "@/components/ui/button";
 
 const Footer: React.FC = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-opendata-blue text-white pt-16 pb-8">
       <div className="container-custom">
@@ -74,11 +81,6 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">
-                  Depoimentos
-                </a>
-              </li>
-              <li>
                 <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
                   Contato
                 </a>
@@ -145,6 +147,16 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Fale Conosco button */}
+        <div className="flex justify-center mt-10">
+          <Button 
+            onClick={scrollToContact}
+            className="bg-opendata-yellow hover:bg-opacity-90 text-opendata-blue font-semibold px-8 py-3 text-lg animate-bounce"
+          >
+            Fale Conosco
+          </Button>
         </div>
       </div>
     </footer>
