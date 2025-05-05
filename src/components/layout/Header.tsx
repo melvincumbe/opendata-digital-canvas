@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,13 +84,13 @@ const Header: React.FC = () => {
       className={cn(
         "fixed w-full top-0 left-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white shadow-md py-3"
+          ? "bg-white dark:bg-opendata-blue shadow-md py-3"
           : "bg-transparent py-5"
       )}
     >
       <div className="container-custom flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="text-opendata-blue font-bold text-2xl">
+          <span className="text-opendata-blue dark:text-white font-bold text-2xl">
             Opendata<span className="text-opendata-yellow">Systems</span>
           </span>
         </Link>
@@ -111,33 +112,37 @@ const Header: React.FC = () => {
             <SocialIcon Icon={Instagram} href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" />
             <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
           </div>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-opendata-blue"
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <ThemeToggle />
+          <button
+            className="text-opendata-blue dark:text-white"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       <div
-        className={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-40 bg-white dark:bg-opendata-blue transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden`}
       >
         <div className="flex flex-col h-full">
-          <div className="flex justify-between items-center p-5 border-b">
-            <span className="text-opendata-blue font-bold text-xl">
+          <div className="flex justify-between items-center p-5 border-b dark:border-gray-700">
+            <span className="text-opendata-blue dark:text-white font-bold text-xl">
               Opendata<span className="text-opendata-yellow">Systems</span>
             </span>
             <button
               onClick={toggleMenu}
               aria-label="Close Menu"
-              className="text-opendata-blue"
+              className="text-opendata-blue dark:text-white"
             >
               <X size={24} />
             </button>
@@ -151,7 +156,7 @@ const Header: React.FC = () => {
               <NavLink href="#contact">Contato</NavLink>
             </ul>
           </nav>
-          <div className="p-5 border-t">
+          <div className="p-5 border-t dark:border-gray-700">
             <div className="flex justify-center space-x-6 mb-4">
               <SocialIcon Icon={Facebook} href="https://www.facebook.com/share/1DHHEZVmus/?mibextid=wwXIfr" />
               <SocialIcon Icon={Instagram} href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" />
