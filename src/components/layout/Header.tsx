@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const Header: React.FC = () => {
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
       }
 
       // Detect which section is currently in view
-      const sections = ["home", "about", "services", "pricing", "testimonials", "contact"];
+      const sections = ["home", "about", "services", "pricing", "contact"];
       let currentSection = activeSection;
 
       sections.forEach(section => {
@@ -101,7 +101,6 @@ const Header: React.FC = () => {
             <NavLink href="#about">Sobre Nós</NavLink>
             <NavLink href="#services">Serviços</NavLink>
             <NavLink href="#pricing">Planos</NavLink>
-            <NavLink href="#testimonials">Depoimentos</NavLink>
             <NavLink href="#contact">Contato</NavLink>
           </ul>
         </nav>
@@ -112,7 +111,6 @@ const Header: React.FC = () => {
             <SocialIcon Icon={Instagram} href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" />
             <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
           </div>
-          <Button className="btn-primary">Fale Conosco</Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -150,7 +148,6 @@ const Header: React.FC = () => {
               <NavLink href="#about">Sobre Nós</NavLink>
               <NavLink href="#services">Serviços</NavLink>
               <NavLink href="#pricing">Planos</NavLink>
-              <NavLink href="#testimonials">Depoimentos</NavLink>
               <NavLink href="#contact">Contato</NavLink>
             </ul>
           </nav>
@@ -160,7 +157,6 @@ const Header: React.FC = () => {
               <SocialIcon Icon={Instagram} href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" />
               <SocialIcon Icon={Linkedin} href="https://linkedin.com" />
             </div>
-            <Button className="w-full btn-primary">Fale Conosco</Button>
           </div>
         </div>
       </div>
