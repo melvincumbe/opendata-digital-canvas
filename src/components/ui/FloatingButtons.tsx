@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { MessageSquare, ExternalLink, WhatsApp, HelpCircle } from "lucide-react";
+import { MessageSquare, ExternalLink, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const FloatingButtons: React.FC = () => {
@@ -22,7 +22,7 @@ const FloatingButtons: React.FC = () => {
 
   const buttons = [
     {
-      icon: <WhatsApp size={20} />,
+      icon: <MessageSquare size={20} />,
       label: "WhatsApp",
       href: "https://wa.me/258833634798",
       color: "bg-green-500",
