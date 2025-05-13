@@ -1,26 +1,794 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>opendata-digital-canvas</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>OpendataSystems</title>
+    <meta name="description" content="Soluções digitais para o crescimento do seu negócio" />
+    <meta name="author" content="OpendataSystems" />
 
-    <meta property="og:title" content="opendata-digital-canvas" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="OpendataSystems" />
+    <meta property="og:description" content="Soluções digitais para o crescimento do seu negócio" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:site" content="@opendatasystems" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <header id="header" class="header">
+      <div class="container">
+        <a href="#" class="logo">
+          Opendata<span class="text-yellow">Systems</span>
+        </a>
+        <nav id="desktopNav" class="desktop-nav">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">Sobre Nós</a></li>
+            <li><a href="#services" class="nav-link">Serviços</a></li>
+            <li><a href="#pricing" class="nav-link">Planos</a></li>
+            <li><a href="#contact" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="desktop-actions">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/share/1DHHEZVmus/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="moon" id="moonIcon"></i>
+            <i data-lucide="sun" id="sunIcon" class="hidden"></i>
+          </button>
+        </div>
+        <button id="menuToggle" class="menu-toggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="logo">Opendata<span class="text-yellow">Systems</span></span>
+        <button id="closeMenu">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">Sobre Nós</a></li>
+          <li><a href="#services" class="nav-link">Serviços</a></li>
+          <li><a href="#pricing" class="nav-link">Planos</a></li>
+          <li><a href="#contact" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-social">
+        <a href="https://www.facebook.com/share/1DHHEZVmus/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="linkedin"></i>
+        </a>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="flag-marker">
+                <i data-lucide="flag"></i>
+                <span>Moçambique</span>
+              </div>
+              
+              <h1>Soluções Digitais para o <span class="text-yellow">Crescimento</span> do seu Negócio</h1>
+              
+              <p>
+                Hospedagem de sites, domínios personalizados, e-mails profissionais e muito mais.
+                Transforme sua presença digital com a OpendataSystems.
+              </p>
+              
+              <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                  Quero um Orçamento
+                  <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#services" class="btn btn-outline">Nossos Serviços</a>
+              </div>
+              
+              <div class="testimonial-preview">
+                <div class="avatar-group">
+                  <div class="avatar">A</div>
+                  <div class="avatar">B</div>
+                  <div class="avatar">C</div>
+                  <div class="avatar">D</div>
+                </div>
+                <div class="stat">
+                  <span class="highlight">+500</span> clientes satisfeitos
+                </div>
+              </div>
+            </div>
+            
+            <div class="hero-image">
+              <div class="hero-graphic">
+                <div class="site-preview">
+                  <div class="preview-head">
+                    <div>OS</div>
+                  </div>
+                  <div class="preview-content">
+                    <div class="line"></div>
+                    <div class="line short"></div>
+                    <div class="line medium"></div>
+                    <div class="line short"></div>
+                    <div class="button"></div>
+                  </div>
+                </div>
+                <div class="status-badge right">
+                  <div class="indicator green"></div>
+                  <span>Site Online</span>
+                </div>
+                <div class="status-badge left">
+                  <div class="indicator yellow"></div>
+                  <span>100% Seguro</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <h2 class="section-title">Sobre Nós</h2>
+          <p class="section-subtitle">
+            Conheça a OpendataSystems e nossa missão de transformar o universo digital
+            das empresas com soluções inovadoras e personalizadas.
+          </p>
+
+          <div class="about-content">
+            <div class="about-image">
+              <div class="image-box">
+                <div class="company-logo">OpendataSystems</div>
+              </div>
+              <div class="experience-badge">
+                <span class="years">10+</span>
+                <span class="label">Anos de Experiência</span>
+              </div>
+            </div>
+
+            <div class="about-text">
+              <h3>Excelência em Serviços Digitais</h3>
+              <p>
+                Fundada há mais de 10 anos, a OpendataSystems nasceu com o propósito de 
+                fornecer soluções digitais de qualidade para empresas de todos os portes. 
+                Nossa jornada começou com serviços de hospedagem e hoje oferecemos um 
+                ecossistema completo de soluções para sua presença online.
+              </p>
+              <p>
+                Contamos com uma equipe de profissionais qualificados e comprometidos 
+                em entregar o melhor para cada cliente, com atendimento personalizado 
+                e suporte constante em todas as etapas.
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <i data-lucide="check-circle"></i>
+                  <span>Mais de 10 anos de experiência no mercado</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle"></i>
+                  <span>Equipe especializada em tecnologia e inovação</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle"></i>
+                  <span>Suporte técnico 24/7</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle"></i>
+                  <span>Soluções personalizadas para cada cliente</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle"></i>
+                  <span>Compromisso com resultados</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle"></i>
+                  <span>Tecnologia de ponta para melhor desempenho</span>
+                </li>
+              </ul>
+
+              <a href="#" class="btn btn-primary">Conheça Nossa Equipe</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services section bg-gray">
+        <div class="container">
+          <h2 class="section-title">Nossos Serviços</h2>
+          <p class="section-subtitle">
+            Oferecemos soluções completas para sua presença digital, desde hospedagem até
+            desenvolvimento de sistemas personalizados.
+          </p>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">
+                <i data-lucide="server"></i>
+              </div>
+              <h3>Hospedagem de Sites</h3>
+              <p>Hospedagem de alta performance com servidores no Brasil, garantindo velocidade e estabilidade para seu site.</p>
+              <a href="#" class="link">
+                Saiba Mais
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">
+                <i data-lucide="globe"></i>
+              </div>
+              <h3>Domínios Personalizados</h3>
+              <p>Registre seu domínio exclusivo e fortaleça a identidade da sua marca na internet com nossos serviços.</p>
+              <a href="#" class="link">
+                Saiba Mais
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <h3>E-mails Profissionais</h3>
+              <p>Crie e-mails com o nome do seu domínio e transmita mais credibilidade na comunicação com seus clientes.</p>
+              <a href="#" class="link">
+                Saiba Mais
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">
+                <i data-lucide="shield"></i>
+              </div>
+              <h3>Certificados SSL</h3>
+              <p>Proteja os dados dos seus visitantes e melhore seu ranqueamento no Google com certificados SSL.</p>
+              <a href="#" class="link">
+                Saiba Mais
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">
+                <i data-lucide="cpu"></i>
+              </div>
+              <h3>Serviços Técnicos</h3>
+              <p>Suporte técnico especializado para resolver problemas e otimizar o desempenho do seu site.</p>
+              <a href="#" class="link">
+                Saiba Mais
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon">
+                <i data-lucide="file-code"></i>
+              </div>
+              <h3>Desenvolvimento Web</h3>
+              <p>Criação de sites, landing pages e lojas virtuais com design moderno e responsivo.</p>
+              <a href="#" class="link">
+                Saiba Mais
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials section bg-gray">
+        <div class="container">
+          <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+          <p class="section-subtitle">
+            Conheça a experiência de quem já transformou sua presença digital com
+            os serviços da OpendataSystems.
+          </p>
+
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              <div class="rating">
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+              </div>
+              <p class="quote">"A OpendataSystems transformou completamente a presença online da nossa empresa. O site agora carrega muito mais rápido e a segurança aumentou significativamente."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">C</div>
+                <div class="author-info">
+                  <h4>Carlos Silva</h4>
+                  <p>CEO, TechBrasil</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="rating">
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+              </div>
+              <p class="quote">"O suporte técnico é excepcional. Sempre que tivemos algum problema, eles resolveram rapidamente. Recomendo muito os serviços da OpendataSystems."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">A</div>
+                <div class="author-info">
+                  <h4>Amanda Oliveira</h4>
+                  <p>Diretora de Marketing, Grupo Inovação</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="rating">
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star"></i>
+              </div>
+              <p class="quote">"Nosso e-commerce teve um aumento de 40% nas vendas após migrarmos para a hospedagem da OpendataSystems. A velocidade e estabilidade fazem toda diferença."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">M</div>
+                <div class="author-info">
+                  <h4>Marcelo Costa</h4>
+                  <p>Proprietário, Costa Imóveis</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="rating">
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+                <i data-lucide="star" class="star filled"></i>
+              </div>
+              <p class="quote">"Os e-mails profissionais elevaram o nível de credibilidade da nossa empresa. A equipe da OpendataSystems foi muito atenciosa na implementação."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">P</div>
+                <div class="author-info">
+                  <h4>Patricia Mendes</h4>
+                  <p>Gerente, Studio Design</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing section">
+        <div class="container">
+          <h2 class="section-title">Planos e Preços</h2>
+          <p class="section-subtitle">
+            Escolha o plano ideal para o seu negócio e comece a expandir sua
+            presença digital hoje mesmo.
+          </p>
+          
+          <div class="currency-note">
+            <i data-lucide="flag"></i>
+            <span>Preços em Metical Moçambicano (MT)</span>
+          </div>
+
+          <div class="pricing-cards">
+            <div class="pricing-card">
+              <h3>Pacote Simples</h3>
+              <div class="price">
+                <span class="amount">280 MT</span>
+                <span class="period">/mês</span>
+              </div>
+              <p class="description">Ideal para pequenos negócios e profissionais liberais.</p>
+              
+              <div class="divider"></div>
+              
+              <ul class="features">
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>1 Domínio</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>10GB de Espaço</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Tráfego Ilimitado</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Anti-spam Profissional</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Backup Diário Remoto</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Segurança Imunify360</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>5 Contas de Email</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Certificado SSL</span>
+                </li>
+              </ul>
+
+              <button class="btn btn-secondary">Contratar Agora</button>
+            </div>
+
+            <div class="pricing-card popular">
+              <span class="popular-tag">Mais Popular</span>
+              <h3>Pacote 2</h3>
+              <div class="price">
+                <span class="amount">560 MT</span>
+                <span class="period">/mês</span>
+              </div>
+              <p class="description">Para empresas em crescimento que precisam de mais recursos.</p>
+              
+              <div class="divider"></div>
+              
+              <ul class="features">
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>3 Domínios</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>25GB de Espaço</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Tráfego Ilimitado</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Anti-spam Profissional</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Backup Diário Remoto</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Segurança Imunify360</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>20 Contas de Email</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Certificado SSL</span>
+                </li>
+              </ul>
+
+              <button class="btn btn-primary">Contratar Agora</button>
+            </div>
+
+            <div class="pricing-card">
+              <h3>Pacote 3</h3>
+              <div class="price">
+                <span class="amount">780 MT</span>
+                <span class="period">/mês</span>
+              </div>
+              <p class="description">Solução completa para empresas estabelecidas.</p>
+              
+              <div class="divider"></div>
+              
+              <ul class="features">
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>5 Domínios</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>50GB de Espaço</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Tráfego Ilimitado</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Anti-spam Profissional</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Backup Diário Remoto</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Segurança Imunify360</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>50 Contas de Email</span>
+                </li>
+                <li>
+                  <i data-lucide="check"></i>
+                  <span>Certificado SSL</span>
+                </li>
+              </ul>
+
+              <button class="btn btn-secondary">Contratar Agora</button>
+            </div>
+          </div>
+
+          <div class="custom-plan">
+            <p>Precisando de uma solução personalizada?</p>
+            <a href="#contact">Entre em contato para um plano sob medida</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <div class="container">
+          <h2 class="section-title">Entre em Contato</h2>
+          <p class="section-subtitle">
+            Estamos prontos para ajudar você a transformar sua presença digital.
+            Entre em contato conosco hoje mesmo.
+          </p>
+
+          <div class="contact-container">
+            <div class="contact-form">
+              <form id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Nome Completo*</label>
+                    <input type="text" id="name" name="name" required placeholder="Seu nome">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
+                  </div>
+                  <div class="form-group">
+                    <label for="service">Serviço de Interesse</label>
+                    <select id="service" name="service">
+                      <option value="">Selecione uma opção</option>
+                      <option value="hosting">Hospedagem de Sites</option>
+                      <option value="domain">Domínios Personalizados</option>
+                      <option value="email">E-mails Profissionais</option>
+                      <option value="ssl">Certificados SSL</option>
+                      <option value="technical">Serviços Técnicos</option>
+                      <option value="development">Desenvolvimento Web</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="order">Detalhes da Encomenda</label>
+                  <input type="text" id="order" name="order" placeholder="Descreva brevemente sua encomenda">
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Assunto*</label>
+                  <input type="text" id="subject" name="subject" required placeholder="Assunto da sua mensagem">
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Mensagem*</label>
+                  <textarea id="message" name="message" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+                </div>
+
+                <div class="form-submit">
+                  <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="contact-info">
+              <h3>Informações de Contato</h3>
+
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <i data-lucide="phone"></i>
+                  </div>
+                  <div class="method-details">
+                    <h4>Telefone</h4>
+                    <p>+258 833634798 / 846903226</p>
+                    <a href="tel:+258833634798">Ligue para nós</a>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <i data-lucide="mail"></i>
+                  </div>
+                  <div class="method-details">
+                    <h4>Email</h4>
+                    <p>contato@opendatasystems.com.br</p>
+                    <a href="mailto:contato@opendatasystems.com.br">Envie um email</a>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+                  <div class="method-details">
+                    <h4>Chat</h4>
+                    <p>Suporte via chat</p>
+                    <a href="#">Iniciar chat</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="additional-info">
+                <h4>Localização</h4>
+                <p>Maputo, Matola, Malhampsene</p>
+                
+                <h4>Horário de Atendimento</h4>
+                <p>Segunda a Sexta: 8h às 18h</p>
+                <p>Sábado: 9h às 13h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <h3 class="footer-logo">Opendata<span class="text-yellow">Systems</span></h3>
+            <div class="country-flag">
+              <i data-lucide="flag"></i>
+              <span>Moçambique</span>
+            </div>
+            <p>
+              Transformando ideias em soluções digitais inovadoras para empresas
+              de todos os tamanhos.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/share/1DHHEZVmus/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <i data-lucide="facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/opendatasystems.mz?igsh=MWNlODQ0cm9wejExdQ==" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <i data-lucide="instagram"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <i data-lucide="linkedin"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">Sobre Nós</a></li>
+              <li><a href="#services">Serviços</a></li>
+              <li><a href="#pricing">Planos</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contato</h4>
+            <ul>
+              <li class="contact-item">
+                <i data-lucide="map-pin"></i>
+                <span>Maputo, Matola, Malhampsene</span>
+              </li>
+              <li class="contact-item">
+                <i data-lucide="phone"></i>
+                <span>+258 833634798 / 846903226</span>
+              </li>
+              <li class="contact-item">
+                <i data-lucide="mail"></i>
+                <span>contato@opendatasystems.com.mz</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>
+              Fique por dentro das nossas novidades e lançamentos.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Seu e-mail">
+              <button type="submit" class="btn btn-primary">Inscrever-se</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; <span id="currentYear"></span> OpendataSystems. Todos os direitos reservados.<br>
+            <span class="developer">Desenvolvido por OpendataSystems e Melvin Cumbe (Desenvolvedor Web)</span>
+          </p>
+          <div class="footer-legal">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de Privacidade</a>
+          </div>
+        </div>
+
+        <div class="footer-cta">
+          <button id="scrollToContact" class="btn btn-primary cta-button">
+            Fale Conosco
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <div class="floating-buttons" id="floatingButtons">
+      <div class="action-buttons" id="actionButtons">
+        <a href="https://wa.me/258833634798" target="_blank" rel="noopener noreferrer" class="action-button whatsapp">
+          <i data-lucide="message-square"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://www.opendatasystemsmz.com/" target="_blank" rel="noopener noreferrer" class="action-button website">
+          <i data-lucide="external-link"></i>
+          <span>Website</span>
+        </a>
+      </div>
+      <button id="helpButton" class="help-button">
+        <i data-lucide="help-circle"></i>
+      </button>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast">
+      <div class="toast-content">
+        <i data-lucide="check-circle" class="toast-icon"></i>
+        <div class="toast-message">
+          <span class="toast-title">Sucesso!</span>
+          <span class="toast-description">Mensagem enviada com sucesso!</span>
+        </div>
+      </div>
+      <button class="toast-close">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
