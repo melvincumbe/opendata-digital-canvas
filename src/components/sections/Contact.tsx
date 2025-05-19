@@ -1,8 +1,8 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageCircle, Phone } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
@@ -13,8 +13,9 @@ const Contact: React.FC = () => {
     subject: "",
     message: "",
     service: "",
-    order: "", // Added order field
+    order: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -23,28 +24,57 @@ const Contact: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
-      variant: "default",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-      service: "",
-      order: "",
-    });
+    try {
+      // Preparar dados para o Supabase - incluindo apenas os campos necessários para a tabela
+      const messageData = {
+        name: formData.name,
+        email: formData.email,
+        message: `Assunto: ${formData.subject}
+Serviço: ${formData.service || 'Não especificado'}
+Telefone: ${formData.phone || 'Não informado'}
+Encomenda: ${formData.order || 'Não especificada'}
+        
+Mensagem:
+${formData.message}`
+      };
+      
+      // Enviar dados para o Supabase
+      const { error } = await supabase
+        .from('messages')
+        .insert([messageData]);
+        
+      if (error) throw error;
+      
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve.",
+        variant: "default",
+      });
+      
+      // Resetar formulário
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        service: "",
+        order: "",
+      });
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -97,6 +127,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
                     placeholder="Seu nome"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -112,6 +143,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
                     placeholder="seu.email@exemplo.com"
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -129,6 +161,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
                     placeholder="(00) 00000-0000"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -141,6 +174,7 @@ const Contact: React.FC = () => {
                     value={formData.service}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
+                    disabled={isSubmitting}
                   >
                     <option value="">Selecione uma opção</option>
                     <option value="hosting">Hospedagem de Sites</option>
@@ -165,6 +199,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
                   placeholder="Descreva brevemente sua encomenda"
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -181,6 +216,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
                   placeholder="Assunto da sua mensagem"
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -197,12 +233,13 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-opendata-blue"
                   placeholder="Digite sua mensagem aqui..."
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
 
               <div className="flex justify-end">
-                <Button type="submit" className="btn-primary">
-                  Enviar Mensagem
+                <Button type="submit" className="btn-primary" disabled={isSubmitting}>
+                  {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                 </Button>
               </div>
             </form>
